@@ -129,3 +129,18 @@ cd frontend
 python3 -m http.server 8000
 
 Ouvre http://localhost:8000 dans ton navigateur
+
+PB COMMIT
+
+error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+send-pack: unexpected disconnect while reading sideband packet
+➡️ Cela arrive souvent si :
+
+La taille des fichiers est trop grande pour un push via HTTPS
+
+L’URL du remote est mal configurée (HTTPS vs SSH)
+Option B : augmenter le buffer Git (utile pour gros fichiers)
+git config --global http.postBuffer 524288000
+
+
+(ça met le buffer à 500MB, normalement suffisant)
