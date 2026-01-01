@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Dashboard - Citation App</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>Gestion des citations</h1>
+<button id="logoutBtn">Déconnexion</button>
+
+<section>
+  <h2>Ajouter un domaine</h2>
+  <input type="text" id="domainInput" placeholder="Nom du domaine">
+  <button id="addDomainBtn">Ajouter</button>
+  <ul id="domainList"></ul>
+</section>
+
+<section>
+  <h2>Ajouter un auteur</h2>
+  <input type="text" id="authorName" placeholder="Nom de l'auteur">
+  <textarea id="authorBio" placeholder="Biographie"></textarea>
+  <button id="addAuthorBtn">Ajouter</button>
+  <ul id="authorList"></ul>
+</section>
+
+<section>
+  <h2>Ajouter une citation</h2>
+  <textarea id="quoteText" placeholder="Texte de la citation"></textarea>
+  <input type="text" id="quoteRef" placeholder="Référence">
+  <select id="quoteAuthor"></select>
+  <select id="quoteDomain"></select>
+  <button id="addQuoteBtn">Ajouter</button>
+  <ul id="quoteList"></ul>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
