@@ -148,3 +148,56 @@ git config --global http.postBuffer 524288000
 CREATION BRANCHES :
 dev1
 dev2
+
+menjato@mnKodem ProjetBackendGestionQuotes % git branch
+
+* main
+
+4️⃣ Fusionner main dans dev1 (pour synchroniser)
+
+C’est la façon recommandée pour intégrer les dernières modifications de main dans ta branche dev1 :
+
+git checkout dev1
+git merge main
+
+menjato@mnKodem ProjetBackendGestionQuotes % git fetch 
+origin
+From https://github.com/GrainEspoir91/ProjetBackendGestionQuotes
+ * [new branch]      dev1       -> origin/dev1
+ * [new branch]      dev2       -> origin/dev2
+
+ 2️⃣ Créer une branche locale qui suit la branche distante
+git checkout -b dev1 origin/dev1
+
+Explication :
+
+-b dev1 → crée la branche locale dev1
+
+origin/dev1 → la branche distante à suivre
+
+Après ça, tu seras sur dev1 local, et elle suivra automatiquement origin/dev1
+
+4️⃣ Synchroniser avec main si nécessaire
+
+Ensuite, pour mettre dev1 à jour avec main :
+
+git checkout main
+git pull origin main        # mettre main à jour
+git checkout dev1
+git merge main              # ou git rebase main
+
+menjato@mnKodem ProjetBackendGestionQuotes % git merge 
+main
+Updating da5f148..5419cb0
+Fast-forward
+ README.md                 |  4 ++
+ backend/routes/authors.js | 49 +++++++++++----
+ backend/routes/domains.js | 49 +++++++++++----
+ backend/routes/quotes.js  | 57 +++++++++++-------
+ frontend/dashboard.html   |  2 +-
+ frontend/script.js        | 69 ++++++++++++++++++----
+ frontend/style.css        | 53 ++++++++++++-----
+ 7 files changed, 209 insertions(+), 74 deletions(-)
+
+6️⃣ Pousser la branche dev1 mise à jour sur GitHub
+git push origin dev1
