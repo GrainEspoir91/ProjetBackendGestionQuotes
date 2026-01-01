@@ -1,33 +1,54 @@
+/* Style général du body */
 body {
   font-family: Arial, sans-serif;
   margin: 20px;
   background: #f4f4f4;
-}
-
-h1, h2 {
   color: #333;
 }
 
-input, textarea, select, button {
-  display: block;
-  margin: 5px 0;
-  padding: 8px;
-  width: 300px;
+/* Titres */
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #222;
 }
 
-button {
-  cursor: pointer;
+h2 {
+  margin-top: 30px;
+  margin-bottom: 10px;
+  color: #444;
 }
 
-.login-container {
+/* Sections */
+section {
   background: #fff;
   padding: 20px;
-  width: 350px;
-  margin: 100px auto;
+  margin-bottom: 20px;
   border-radius: 8px;
-  box-shadow: 0 0 10px #ccc;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
 }
 
-.error {
-  color: red;
+/* Inputs, textarea, select */
+input[type="text"], textarea, select {
+  display: block;
+  width: 300px;
+  padding: 8px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 14px;
 }
+
+textarea {
+  height: 60px;
+  resize: vertical;
+}
+
+/* Boutons */
+button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-right: 5

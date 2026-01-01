@@ -144,3 +144,7 @@ git config --global http.postBuffer 524288000
 
 
 (ça met le buffer à 500MB, normalement suffisant)
+
+CREATION BRANCHES :
+dev1
+dev2
